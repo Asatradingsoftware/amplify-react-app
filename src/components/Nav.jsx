@@ -13,7 +13,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import StarIcon from '@material-ui/icons/Star';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import { Link } from 'react-router-dom';
-import {AmplifySignOut} from '@aws-amplify/ui-react';
+import { AmplifySignOut } from '@aws-amplify/ui-react';
 import CardMedia from '@material-ui/core/CardMedia';
 import TranslateIcon from '@material-ui/icons/Translate';
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
@@ -28,7 +28,7 @@ import MultilineChartIcon from '@material-ui/icons/MultilineChart';
 import TrendingDownIcon from '@material-ui/icons/TrendingDown';
 import TrendingFlatIcon from '@material-ui/icons/TrendingFlat';
 import Avatar from '@material-ui/core/Avatar';
-import LogoPic from './static/images/avatar/circleiconlogo.png'
+import LogoPic from '../static/images/avatar/circleiconlogo.png'
 
 const drawerWidth = 240;
 
@@ -63,11 +63,11 @@ export default function ClippedDrawer() {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-        <CardMedia
-              className={classes.media}
-              image="./static/images/avatar/logo_rion.png"
-              title="Paella dish"
-          />
+          {/* <CardMedia
+            className={classes.media}
+            image="./static/images/avatar/logo_rion.png"
+            title="Logo"
+          /> */}
           <Avatar alt="Remy Sharp" src={LogoPic} style={{ marginRight: '0.8rem' }} />
           <Typography variant="h6" noWrap>
             OrionZolution ver 0.1
@@ -84,85 +84,118 @@ export default function ClippedDrawer() {
         <Toolbar />
         <div className={classes.drawerContainer}>
           <List>
-            <Typography variant="h6" gutterBottom>
-                Investment Categories
-              </Typography>              
-              <ListItem button key="USequities">
-                <Link to="/MyHome" className="nav-links">
+            <Typography variant="h6" align='center' gutterBottom>
+              Investment Categories
+              </Typography>
+            <Link to="/us" style={styles.itemLink}>
+              <ListItem button key="US Equities">
                 <ListItemIcon><AttachMoneyIcon /></ListItemIcon>
-                <ListItemText primary="USequities" />
-                </Link>
+                <ListItemText primary="US Equities" />
               </ListItem>
+            </Link>
+
+            <Link to="/technology" style={styles.itemLink}>
               <ListItem button key="Technology">
                 <ListItemIcon><LaptopMacIcon /></ListItemIcon>
                 <ListItemText primary="Technology" />
-              </ListItem>     
-              <ListItem button key="Middleeast">
+              </ListItem>
+            </Link>
+
+            <Link to="/middle-east" style={styles.itemLink}>
+              <ListItem button key="Middle East">
                 <ListItemIcon><MapIcon /></ListItemIcon>
-                <ListItemText primary="Middleeast" />
-              </ListItem>  
+                <ListItemText primary="Middle East" />
+              </ListItem>
+            </Link>
+
+            <Link to="/healthcare" style={styles.itemLink}>
               <ListItem button key="Healthcare">
                 <ListItemIcon><LocalHospitalIcon /></ListItemIcon>
                 <ListItemText primary="Healthcare" />
-              </ListItem>  
+              </ListItem>
+            </Link>
+
+            <Link to="/global" style={styles.itemLink}>
               <ListItem button key="Global">
                 <ListItemIcon><PublicIcon /></ListItemIcon>
                 <ListItemText primary="Global" />
-              </ListItem>  
+              </ListItem>
+            </Link>
+
+            <Link to="/emerging-markets" style={styles.itemLink}>
               <ListItem button key="Emerging Markets">
                 <ListItemIcon><LanguageIcon /></ListItemIcon>
                 <ListItemText primary="Emerging Markets" />
-              </ListItem>  
+              </ListItem>
+            </Link>
+
+            <Link to="/china" style={styles.itemLink}>
               <ListItem button key="China">
                 <ListItemIcon><TranslateIcon /></ListItemIcon>
                 <ListItemText primary="China" />
-              </ListItem>  
+              </ListItem>
+            </Link>
+
+            <Link to="/energy" style={styles.itemLink}>
               <ListItem button key="Energy">
                 <ListItemIcon><PowerIcon /></ListItemIcon>
                 <ListItemText primary="Energy" />
-              </ListItem>                                                                        
+              </ListItem>
+            </Link>
+
+            <Link to="/europe" style={styles.itemLink}>
               <ListItem button key="Europe">
                 <ListItemIcon><EuroIcon /></ListItemIcon>
                 <ListItemText primary="Europe" />
-              </ListItem>    
-            
+              </ListItem>
+            </Link>
+
           </List>
           <Divider />
           <List>
-                <ListItem button key="Orion29">
-                <ListItemIcon><StarIcon /></ListItemIcon>
-                <ListItemText primary="Orion29" />
-                </ListItem>    
-            </List>
+            <ListItem button key="Orion29">
+              <ListItemIcon><StarIcon /></ListItemIcon>
+              <ListItemText primary="Orion29" />
+            </ListItem>
+          </List>
           <Divider />
           <List>
-                <ListItem button key="Disflation">
-                <ListItemIcon><TrendingFlatIcon /></ListItemIcon>
-                <ListItemText primary="Disflation" />
-                </ListItem>    
+            <ListItem button key="Disflation">
+              <ListItemIcon><TrendingFlatIcon /></ListItemIcon>
+              <ListItemText primary="Disflation" />
+            </ListItem>
 
-                <ListItem button key="Deflation">
-                <ListItemIcon><TrendingDownIcon /></ListItemIcon>
-                <ListItemText primary="Deflation" />
-                </ListItem>    
+            <ListItem button key="Deflation">
+              <ListItemIcon><TrendingDownIcon /></ListItemIcon>
+              <ListItemText primary="Deflation" />
+            </ListItem>
 
-                <ListItem button key="Inflation">
-                <ListItemIcon><TrendingUpIcon /></ListItemIcon>
-                <ListItemText primary="Inflation" />
-                </ListItem>    
+            <ListItem button key="Inflation">
+              <ListItemIcon><TrendingUpIcon /></ListItemIcon>
+              <ListItemText primary="Inflation" />
+            </ListItem>
 
-                <ListItem button key="Stagflation">
-                <ListItemIcon><MultilineChartIcon /></ListItemIcon>
-                <ListItemText primary="Stagflation" />
-                </ListItem>    
-          </List>     
-          <AmplifySignOut />                                   
+            <ListItem button key="Stagflation">
+              <ListItemIcon><MultilineChartIcon /></ListItemIcon>
+              <ListItemText primary="Stagflation" />
+            </ListItem>
+          </List>
+          <AmplifySignOut />
         </div>
       </Drawer>
       <main className={classes.content}>
         <Toolbar />
 
       </main>
-    </div>
+    </div >
   );
+}
+
+const styles = {
+  itemLink: {
+    display: 'flex',
+    flexDirection: 'row',
+    textDecoration: 'none',
+    color: '#333'
+  }
 }
